@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A web app that allows users to pick colors from their camera feed">
+  <meta name="keywords" content="color picker, camera, color detection, web app">
+  <meta name="author" content="Cabdi Waaxid Siciid">
+  <meta property="og:title" content="Color Picker from Camera">
+  <meta property="og:description" content="A web app that allows users to pick colors from their camera feed">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:url" content="https://your-website-url.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Color Picker from Camera">
+  <meta name="twitter:description" content="A web app that allows users to pick colors from their camera feed">
+  <meta name="twitter:image" content="logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <title>Color Picker from Camera</title>
   <style>
@@ -148,6 +159,13 @@
       isFrontCamera = !isFrontCamera; // Toggle camera
       getCameraStream(isFrontCamera);
     });
+    changeCameraButton.addEventListener('click', function () {
+      if(isFrontCamera === true) {
+        video.style.transform = 'scaleX(-1)';
+      } else {
+        video.style.transform = 'scaleX(1)';
+      }
+    })
 
     // Convert RGB to Hex
     function rgbToHex(r, g, b) {
